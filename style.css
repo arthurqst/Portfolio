@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-content {
+    display: inline-block;
+    text-align: center;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+h1 {
+    color: white;
+    font-size: 2.5em;
+    margin-top: 10px;
+}
+
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+.project {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-info h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    margin-bottom: 10px;
+}
+
+.project-info a {
+    text-decoration: none;
+    color: #4CAF50;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-info a:hover {
+    color: #388E3C;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 40px;
+}

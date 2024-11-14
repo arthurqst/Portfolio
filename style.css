@@ -6,12 +6,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #fff5e7;
     color: #333;
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: rgb(197, 51, 51);
     padding: 20px;
     text-align: center;
 }
@@ -27,7 +27,7 @@ header p {
     width: 100%;
     text-align: center;
     margin-top: 10px;
-    color: white;
+    color: rgb(255, 251, 229);
     font-style: italic;
 }
 
@@ -37,10 +37,11 @@ header p {
     height: 150px;
     object-fit: cover;
     margin-left: 30%;
+    border: 6px rgb(255, 251, 229) solid;
 }
 
 h1 {
-    color: white;
+    color: rgb(255, 251, 229);
     font-size: 2.5em;
     margin-top: 10px;
     margin-right: 30%;
@@ -55,19 +56,24 @@ main {
 h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #333;
+    color: #575050;
 }
 
 h3 {
     font-size: 1.5em;
     margin-top: 20px;
+    color: rgb(197, 51, 51);
+}
+
+h4 {
+    color: rgb(85, 84, 80);
 }
 
 .project {
     overflow: visible;
     display: flex;
     margin-bottom: 20px;
-    background-color: white;
+    background-color:rgb(255, 251, 229);
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -109,13 +115,13 @@ h3 {
 
 .project-info a {
     text-decoration: none;
-    color: #4CAF50;
+    color: rgb(85, 84, 80);
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .project-info a:hover {
-    color: #388E3C;
+    color: rgb(197, 51, 51);
 }
 
 footer {
@@ -126,13 +132,13 @@ footer {
     flex-wrap: wrap;
     padding: 20px;
     background-color: #333;
-    color: white;
+    color:rgb(255, 253, 239);
     margin-top: 40px;
 }
 
 footer a {
     text-decoration: none;
-    color: white;
+    color: rgb(102, 134, 242);
     font-weight: bold;
     transition: color 0.3s ease;
 }

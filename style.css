@@ -6,14 +6,15 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #fff5e7;
-    color: #333;
+    background : linear-gradient(#ffcc00, rgb(255, 0, 187));
+    color: white;
 }
 
 header {
-    background-color: rgb(197, 51, 51);
+    background-color: rgb(0,225,255);
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .header-content {
@@ -21,13 +22,14 @@ header {
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
+    border-bottom: #ffffff;
 }
 
 header p {
     width: 100%;
     text-align: center;
     margin-top: 10px;
-    color: rgb(255, 251, 229);
+    color: #ffffff;
     font-style: italic;
 }
 
@@ -37,14 +39,16 @@ header p {
     height: 150px;
     object-fit: cover;
     margin-left: 30%;
-    border: 6px rgb(255, 251, 229) solid;
+    border: 6px rgb(255, 255, 255) solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
-    color: rgb(255, 251, 229);
+    color: rgb(255, 255, 255);
     font-size: 2.5em;
     margin-top: 10px;
     margin-right: 30%;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 main {
@@ -56,27 +60,30 @@ main {
 h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #575050;
+    color: #ffffff;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 h3 {
     font-size: 1.5em;
     margin-top: 20px;
-    color: rgb(197, 51, 51);
+    color: rgb(0,225,255);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 h4 {
-    color: rgb(85, 84, 80);
+    color: rgb(255, 255, 255);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .project {
     overflow: visible;
     display: flex;
     margin-bottom: 20px;
-    background-color:rgb(255, 251, 229);
+    background-color:rgb(0,225,255);
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .project img {
@@ -87,11 +94,11 @@ h4 {
     height: 150px;
     object-fit: contain;
     margin-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .enlarged {
     position: fixed;
-
     transform: translate(85%, 0%) scale(3);
     z-index: 10;
     cursor: zoom-out;
@@ -114,13 +121,13 @@ h4 {
 
 .project-info a {
     text-decoration: none;
-    color: rgb(85, 84, 80);
+    color: rgb(0, 125, 142);
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .project-info a:hover {
-    color: rgb(197, 51, 51);
+    color: rgb(255, 255, 255);
 }
 
 footer {
@@ -137,9 +144,17 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: rgb(102, 134, 242);
     font-weight: bold;
     transition: color 0.3s ease;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+footer #linkedin {
+    color: rgb(102, 134, 242);
+}
+
+footer #cv {
+    color: rgb(255, 251, 0);
 }
 
 #date {
@@ -150,4 +165,22 @@ iframe {
     width: 250px;
     height: 150px;
     margin-right: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#backToTop {
+    font-size: medium;
+    text-decoration: none;
+    color:rgb(0,225,255);
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    padding: 5px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+#backToTop:hover {
+    color: white;
 }

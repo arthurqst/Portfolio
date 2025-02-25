@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio QUESTE Arthur</title>
+    <title>Portfolio Queste Arthur</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,8 +11,11 @@
     <header>
         <div class="header-content">
             <img src="images/Photo.jpg" alt="Photo de profil" class="profile-img">
-            <h1>QUESTE Arthur</h1>
-            <p><em>Étudiant en 3ème année d'informatique, passionné par le développement de jeux vidéo</em></p>
+            <div id="nom-prenom-desc">
+                <h1>Queste Arthur</h1>
+                <span>Étudiant en informatique</span>
+            </div>
+            <p><em>Comme dans tout bon jeu, chaque défi est une opportunité de progresser.</em></p>
         </div>
     </header>
 
@@ -28,33 +31,32 @@
                     <img src="images/flappybird.gif" alt="Flappy brid project made with unity">
                     <div class="project-info">
                         <h4>Flappy Bird</h4>
-                        <p>Styles de jeu : 2D, Action, Arcade</p>
-                        <p>Le projet est un jeu Flappy Bird sur Unity où le joueur contrôle un oiseau, évite des obstacles et accumule des points.</p>
+                        <p><em>Styles de jeu: 2D, Action, Arcade</em></p>
+                        <p>Clone du jeu Flappy Bird développé sur Unity.</p>
                     </div>
                 </div>
                 <div class="project">
                     <iframe src="https://www.youtube.com/embed/uStd2zI9QFU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="project-info">
                         <h4>Prototype 1 | Saviour-99</h4>
-                        <p>Styles de jeu : 2D, Puzzle</p>
-                        <p>Le projet est un jeu Unity 2D où l'on incarne un robot dans l'espace. Le joueur explore de petites planètes, chacune ayant sa propre gravité, et voyage de planète en planète. Le robot peut tirer des boules de lumière pour se défendre et résoudre des puzzles, notamment en déplaçant des machines pour diriger un rayon lumineux. L'objectif est d'alimenter un canon permettant d'accéder au niveau suivant.</p>
+                        <p><em>Styles de jeu: 2D, Puzzle</em></p>
+                        <p>Jeu développé sur Unity.<br> Le joueur explore de petites planètes, chacune ayant sa propre gravité, et voyage de planète en planète. Le robot peut tirer des boules de lumière pour se défendre et résoudre des puzzles, notamment en déplaçant des machines pour diriger un rayon lumineux. L'objectif est d'alimenter un canon permettant d'accéder au niveau suivant.</p>
                     </div>
                 </div>
                 <div class="project">
                     <iframe src="https://www.youtube.com/embed/uF0xLYv7hPQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="project-info">
                         <h4>Prototype 2 | Dungeons of Elven Heritage</h4>
-                        <p>Styles de jeu : 2D, RPG, Donjons</p>
-                        <p>Le projet est un jeu Unity 2D où l'on incarne un elfe en quête de trésors dans des donjons générés aléatoirement. Le joueur explore des environnements variés, affronte des ennemis et découvre des trésors cachés.</p>
+                        <p><em>Styles de jeu: 2D, RPG, Donjons</em></p>
+                        <p>Jeu développé sur Unity.<br>Le joueur incarne un elfe en quête de trésors dans des donjons générés aléatoirement.</p>
                     </div>
                 </div>
                 <div class="project">
                     <iframe src="https://www.youtube.com/embed/jJ9vWSlMHQQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="project-info">
                         <h4>Projet en développement | Doors Keeper</h4>
-                        <p>Styles de jeu : 3D, Co-op, Roguelike, Adventure</p>
-                        <p>Le projet est un jeu Unity 3D coopératif de type roguelike, où les joueurs incarnent des employés d'une entreprise mystérieuse chargés de gérer des portes menant à des donjons générés aléatoirement. À l'intérieur, ils doivent accomplir des missions tout en récupérant des objets à vendre pour gagner des crédits. Ces crédits permettent d'acheter de l'équipement sur un ordinateur. Celui-ci permet de choisir de nouvelles portes. Les joueurs doivent éviter de perdre trop de crédits, car échouer à une mission entraîne des pertes, et le but est de maintenir un solde positif.</p>
-                        <p>Ce projet utilise Mirror, une API de réseau pour Unity, et FuzzySteam, une solution d'intégration Steam, pour implémenter le multijoueur.</p>
+                        <p><em>Styles de jeu: 3D, Co-op, Roguelike, Adventure</em></p>
+                        <p>Jeu développé sur Unity utilisant Mirror, une API de réseau pour Unity, et FuzzySteam, une solution d'intégration Steam, pour implémenter un système multijoueur.<br>Les joueurs incarnent des employés chargés de gérer des portes menant à des donjons générés aléatoirement. À l'intérieur, ils doivent compléter un objectif pour gagner des crédits. Ces crédits permettent d'acheter de l'équipement sur un ordinateur. Celui-ci permet de choisir de nouvelles portes. Les joueurs doivent éviter de perdre trop de crédits, car échouer à une mission entraîne des pertes.</p>
                     </div>
                 </div>
             </div>
@@ -67,7 +69,7 @@
                     <div class="project-info">
                         <h4>Asteroids</h4>
                         <p>Styles de jeu : 2D, Arcade, Shooter</p>
-                        <p>Le projet est un jeu Godot 2D, inspiré du classique Asteroids. Le joueur contrôle un vaisseau spatial et doit détruire des astéroïdes tout en évitant les collisions.</p>
+                        <p>Clone du jeu Asteroids développé sur Godot.</p>
                     </div>
                 </div>
             </div>
@@ -83,30 +85,22 @@
                     <img src="images/tetris.gif" alt="Tetris project in python using TKinter">
                     <div class="project-info">
                         <h4>Tetris</h4>
-                        <p>Le projet est un jeu Tetris développé en Python avec TKinter. Le joueur contrôlent des formes tombant du haut de l'écran, qu'il peut déplacer et faire pivoter pour remplir des lignes. Avec la possibilité de changer de pièce courante jusqu'à 10 fois.</p>
+                        <p>Clone du jeu Tetris développé en Python avec la librairie TKinter.</p>
                     </div>
                 </div>
                 <div class="project">
                     <img src="images/snake.gif" alt="Snake project in python using PyGame">
                     <div class="project-info">
                         <h4>Snake</h4>
-                        <p>Le projet est un jeu Snake développé en Python avec Pygame. Le joueur contrôle un serpent qui grandit en mangeant des aliments tout en évitant les collisions avec les murs et son propre corps. Le meilleur score est enregistré</p>
+                        <p>Clone du jeu Snake développé en Python avec la librairie Pygame.</p>
                     </div>
                 </div>
                 <div class="project">
                     <img src="images/jeudumoulin.gif" alt="Jeu du moulin project in python using PyGame">
                     <div class="project-info">
                         <h4>Jeu du Moulin</h4>
-                        <p> Le projet est un jeu du Moulin développé en Python avec Pygame, où le joueur affronte une IA. Le jeu se déroule en trois phases :
-                            <ol>
-                            <li>Phase de Placement : Les joueurs placent alternativement leurs pions sur le plateau. L'objectif est de former des lignes de trois pions (un moulin) pour retirer un pion adverse.
-                            </li><br>
-                            <li>Phase de Mouvement : Une fois tous les pions placés, les joueurs déplacent leurs pions pour former des moulins. Les joueurs peuvent retirer des pions adverses lorsqu'un moulin est créé. Si un joueur n’a plus que trois pions, il n’est plus limité dans ses mouvements et peut déplacer ses pions librement sur le plateau.
-                            </li><br>
-                            <li>Phase de Fin de Partie : Lorsqu'un joueur n'a plus que deux pions ou ne peut plus déplacer ses pions, la partie se termine. Le gagnant est celui qui reste avec des pions en jeu.
-                            </li><br>
-                            </ol>
-                            Le jeu utilise une interface graphique simple, offrant une expérience interactive avec l'IA comme adversaire.</p>
+                        <p> Clone du jeu du Moulin développé en Python avec la librairie Pygame, où le joueur affronte une IA.</p>
+                        <a href="https://fr.wikipedia.org/wiki/Jeu_du_moulin" target="_blank">page wikipedia (Jeu du Moulin)</a>
                     </div>
                 </div>
             </div>
@@ -118,14 +112,15 @@
                     <img src="images/sokoban.gif" alt="Sokoban project in Java using Swing">
                     <div class="project-info">
                         <h4>Sokoban</h4>
-                        <p>Le projet est un jeu de Sokoban développé en Java avec Swing, où le joueur pousse des caisses pour les placer sur des cibles. Il inclut plusieurs cartes jouables, un compteur de pas pour suivre les déplacements, et un bouton pour annuler le dernier mouvement. Les graphismes utilisent des images inspirées de Minecraft pour les éléments du jeu.</p>
+                        <p>Clone du jeu Sokoban développé en Java avec la librairie Swing.</p>
+                        <a href="https://fr.wikipedia.org/wiki/Sokoban" target="_blank">page wikipedia (Sokoban)</a>
                     </div>
                 </div>
                 <div class="project">
                     <img src="images/memo.gif" alt="Mémo project in Java using Swing">
                     <div class="project-info">
-                        <h4>Mémo</h4>
-                        <p>Le projet est un jeu de mémo développé en Java avec Swing, où le joueur doit retrouver des paires de cartes identiques. L'interface utilise des composants graphiques Swing pour afficher les cartes et gérer les interactions. Le jeu inclut des fonctionnalités comme le mélange aléatoire des cartes, le comptage des essais, et la vérification automatique des paires trouvées.</p>
+                        <h4>Mémory</h4>
+                        <p>Clone du jeu du mémory développé en Java avec la librairie Swing.</p>
                     </div>
                 </div>
             </div>
@@ -134,18 +129,10 @@
             <div class="category">
                 <h3>C (Language)</h3>
                 <div class="project">
-                    <img src="images/3dtree.png" alt="KDTree visual">
-                    <div class="project-info">
-                        <h4>KDTree</h4>
-                        <p>Le KDTree en 3D est une structure de données qui organise les points dans l'espace pour optimiser les recherches. Ce projet en C l'utilise pour diviser l'espace en 3 dimensions (x, y, z) et faciliter les requêtes spatiales, comme la recherche de voisins proches.</p>
-                        <a href="https://en.wikipedia.org/wiki/K-d_tree" target="_blank">page wikipedia (KD Tree)</a>
-                    </div>
-                </div>
-                <div class="project">
                     <img src="images/taquin.gif" alt="taquin visual">
                     <div class="project-info">
                         <h4>Jeu du Taquin</h4>
-                        <p>Le projet consite en une recréation du jeu du Taquin. L'objectif est de placer dans l'ordre croissant de gauche à droite et de bas en haut les chiffres de la grille, tout en finisant par l'espace vide. Le joueur peut déplacer les cases grâce à l'espace vide. L'aspect graphique du projet a été réalisé avec la biliothèque SDL. De plus une version textuelle utilisant la bibliotèque Ncurses est disponible.</p>
+                        <p>Clone du jeu du Taquin développé en C avec la librairie SDL et la librairie Ncurses pour la version textuelle.</p>
                         <a href="https://fr.wikipedia.org/wiki/Taquin" target="_blank">page wikipedia (Taquin)</a>
                     </div>
                 </div>
@@ -153,7 +140,7 @@
                     <img src="images/cassebrique.gif" alt="cassebrique visual">
                     <div class="project-info">
                         <h4>Casse-briques</h4>
-                        <p>Le projet consite en une recréation du jeu du Casse-briques. Le joueur contrôle une barre qui renvoie une balle. Celle-ci casse les briques à son contact. Le joueur gagne si ne reste aucune brique et perd si la balle tombe dans le vide. L'aspect graphique du projet a été réalisé avec la biliothèque SDL.</p>
+                        <p>Clone du jeu Casse-briques développé en C avec la librairie SDL.</p>
                         <a href="https://fr.wikipedia.org/wiki/Casse-briques" target="_blank">page wikipedia (Casse-briques)</a>
                     </div>
                 </div>
@@ -161,7 +148,7 @@
                     <img src="images/tron.gif" alt="tron visual">
                     <div class="project-info">
                         <h4>Tron</h4>
-                        <p>Le jeu Tron est un jeu adapté du film du même nom et sorti en 1982. L'objectif principal de ce projet est de concevoir et de développer un jeu Tron fonctionnel avec deux interfaces utilisateur (ncurses et SDL) en utilisant le modèle MVC. Ce projet a été réalisé en groupe.</p>
+                        <p>Clone du jeu Tron développé en C avec la librairie SDL et la librairie Ncurses pour la version textuelle. Ce projet a été réalisé en groupe.</p>
                         <a href="https://fr.wikipedia.org/wiki/Tron" target="_blank">page wikipedia (Tron)</a>
                     </div>
                 </div>
@@ -174,7 +161,7 @@
                     <img src="images/pacman.gif" alt="pacMan visual">
                     <div class="project-info">
                         <h4>PacMan</h4>
-                        <p>Le projet consiste en une recréation du jeu Pac-Man. L'objectif est de se déplacer dans un labyrinthe et de manger tous les bonbons sans être touché par les fantômes. Le joueur peut ramasser des bonus qui lui octroient une invincibilité temporaire contre les fantômes, les renvoyant à leur point de départ lorsqu'ils sont touchés. Ce projet a été réalisé en groupe.</p>
+                        <p>Clone du jeu Pac-Man développé en Bash. Ce projet a été réalisé en groupe.</p>
                     </div>
                 </div>
             </div>
@@ -186,28 +173,21 @@
                     <img src="images/Calculatrice.gif" alt="Calculator project in HTML/CSS/JS">
                     <div class="project-info">
                         <h4>Calculatrice graphique</h4>
-                        <p>Le projet propose une calculatrice graphique interactive, sans l'utilisation de eval(), mettant en avant une implémentation d'analyse lexicale pour évaluer les expressions. Le utilisateur peut entrer des équations mathématiques, qui sont analysées et traitées pour afficher les résultats. De plus, un format graphique est disponible pour visualiser des courbes. Ce projet a été réalisé en groupe.</p>
+                        <p>Calculatrice graphique interactive, mettant en avant une implémentation d'analyse lexicale pour évaluer les expressions. Un format graphique est disponible pour visualiser des courbes. Ce projet a été réalisé en groupe.</p>
                     </div>
                 </div>
-                <div class="project">
-                    <img src="images/presentation.gif" alt="Presentation page project in HTML/CSS">
-                    <div class="project-info">
-                        <h4>Page de présentation</h4>
-                        <p>Le projet se compose de plusieurs pages de présentation, chacune dédiée à un membre de l'équipe. Chaque participant a conçu une page mettant en avant son parcours et ses expériences. Tous les membres ont créé un fichier CSS adaptable au projet (ici mon CSS).</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Catégorie BDD -->
-            <div class="category">
-                <h3>Base de données</h3>
                 <div class="project">
                     <img src="images/BDD.gif" alt="PostgreSQL project">
                     <div class="project-info">
                         <h4>Base de données sur les JO2024</h4>
-                        <p>Le projet consistait à développer une base de données sur les Jeux Olympiques 2024, alimentée par des scripts Python de web scraping pour collecter les données automatiquement. La base de données était gérée avec PostgreSQL et mise à disposition via une interface web pour permettre la consultation des informations. Un serveur Falcon en Python a été utilisé pour gérer les interactions entre l'interface utilisateur et la base de données, tandis qu'un serveur Apache hébergeait le site web. Ce système a permis de centraliser les données des JO2024 et de les rendre facilement accessibles. Ce projet a été réalisé en groupe.</p>
+                        <p>Base de données sur les JO2024 sous PostgreSQL, alimentée par des scripts Python de Web scraping. Une interface web permet la consultation des données. Un serveur Falcon en Python gére les interactions entre l'utilisateur et la base de données, tandis qu'un serveur Apache héberge le site web. Ce projet a été réalisé en groupe.</p>
                     </div>
                 </div>
+            </div>
+            <div class="category">
+                <h3>Projets en cours : (étude)</h3>
+                <h4>Jeu de cartes sur Unity, Puissance 4 serveur/client en PHP, Projet en Haskell, Serveur Web en Java</h4>
+                <br>
             </div>
         </section>
         <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆️ Retour en haut</button>

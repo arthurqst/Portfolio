@@ -1,4 +1,4 @@
 # Portfolio
-Mes projets réalisés en étude et personnels.
+Mes projets personnels et académiques.
 
 https://arthurqst.github.io/Portfolio/

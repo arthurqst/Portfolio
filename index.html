@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Un coup d'oeil au code ? ( • ᴗ - ) -->
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -6,419 +7,18 @@
   <meta name="author" content="Arthur Queste">
   <title>Portfolio - Queste Arthur</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #121212;
-      color: white;
-      overflow: hidden;
-    }
-
-    .sidebar {
-      width: 200px;
-      background-color: #1e1e1e;
-      height: 100vh;
-      position: fixed;
-      left: 0;
-      top: 0;
-      padding: 2rem 1rem;
-      z-index: 10;
-      box-sizing: border-box;
-      transition: width 0.3s ease, padding 0.3s ease;
-      overflow: hidden;
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .sidebar a {
-      color: white;
-      text-decoration: none;
-      display: block;
-      margin: 1rem 0;
-    }
-
-    .sidebar a.active {
-      font-weight: bold;
-      color: #a7a1ff;
-    }
-
-    main {
-      margin-left: 200px;
-      width: calc(100vw - 200px);
-      height: 100vh;
-      overflow-y: auto;
-      scroll-snap-type: y mandatory;
-      scroll-behavior: smooth;
-      transition: 0.3s ease, padding 0.3s ease;
-    }
-
-    .content-section {
-      scroll-snap-align: start;
-      height: 100vh;
-      padding: 2rem;
-      box-sizing: border-box;
-      position: relative;
-    }
-
-    .content-section h1 {
-      padding-left: 1rem;
-    }
-
-    .project-carousel {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        height: 100%;
-        align-items: center;
-        justify-content: flex-start;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .project {
-        flex: 0 0 100%;
-        scroll-snap-align: start;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        box-sizing: border-box;
-    }
-
-    .project-content {
-      background-color: #2a2a2a;
-      border-radius: 20px;
-      padding: 2rem;
-      max-width: 80%;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-
-    .project img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .project-info {
-      text-align: center;
-    }
-
-    .tags {
-      margin-top: 0.5rem;
-    }
-
-    .tags span {
-      background: #444;
-      padding: 0.3rem 0.6rem;
-      border-radius: 6px;
-      margin-right: 0.3rem;
-      font-size: 0.8rem;
-    }
-
-    .dots {
-      text-align: center;
-      margin-top: 1rem;
-    }
-
-    .dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #666;
-      margin: 0 5px;
-    }
-
-    .dot.active {
-      background: white;
-    }
-
-    .project-carousel-wrapper {
-      display: flex;
-      flex-direction: column;
-      height: calc(100% - 4rem);
-      justify-content: space-between;
-      padding-bottom: 1rem;
-    }
-
-    .project-carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      gap: 2rem;
-      padding-bottom: 1rem;
-    }
-
-    .project-carousel::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .project-carousel::-webkit-scrollbar-track {
-      background: #1e1e1e;
-      border-radius: 10px;
-    }
-
-    .project-carousel::-webkit-scrollbar-thumb {
-      background: #444;
-      border-radius: 10px;
-    }
-
-    .project-carousel::-webkit-scrollbar-thumb:hover {
-      background: #888;
-    }
-
-    .project-carousel {
-      scrollbar-color: #444 #1e1e1e;
-      scrollbar-width: thin;
-    }
-
-    .dots {
-      text-align: center;
-      margin-top: 0.5rem;
-    }
-
-    .dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #666;
-      margin: 0 5px;
-      transition: background 0.3s ease;
-    }
-
-    .dot.active {
-      background: white;
-    }
-
-    main::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    main::-webkit-scrollbar-track {
-      background: #1e1e1e;
-      border-radius: 10px;
-    }
-
-    main::-webkit-scrollbar-thumb {
-      background: #444;
-      border-radius: 10px;
-    }
-
-    main::-webkit-scrollbar-thumb:hover {
-      background: #888;
-    }
-
-    main {
-      scrollbar-color: #444 #1e1e1e;
-      scrollbar-width: thin;
-    }
-
-    .toggle-button {
-      position: fixed;
-      left: 200px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: #1e1e1e;
-      color: white;
-      width: 30px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 11;
-      border-radius: 0 8px 8px 0;
-      transition: left 0.3s ease;
-    }
-
-    .sidebar.collapsed {
-      width: 0;
-      padding: 0;
-    }
-
-    main.collapsed {
-      margin-left: 0;
-      width: 100vw;
-      transition: 0.3s ease, padding 0.3s ease;
-    }
-
-    .toggle-button.collapsed {
-      left: 0;
-    }
-
-    .project-carousel-wrapper {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-carousel::before,
-    .project-carousel::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 40px;
-      height: 100%;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .project-carousel::before {
-      left: 0;
-      background: linear-gradient(to right, #121212, transparent);
-    }
-
-    .project-carousel::after {
-      right: 0;
-      background: linear-gradient(to left, #121212, transparent);
-    }
-
-    .section-vertical-mask {
-      position: fixed;
-      top: 0;
-      left: 200px;
-      width: calc(100vw - 200px);
-      height: 100vh;
-      pointer-events: none;
-      z-index: 5;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .section-vertical-mask::before,
-    .section-vertical-mask::after {
-      content: "";
-      width: 100%;
-      height: 40px;
-      pointer-events: none;
-    }
-
-    .section-vertical-mask::before {
-      background: linear-gradient(to bottom, #121212, transparent);
-    }
-
-    .section-vertical-mask::after {
-      background: linear-gradient(to top, #121212, transparent);
-    }
-
-    main.collapsed + .section-vertical-mask {
-      left: 0;
-      width: 100vw;
-    }
-
-    .bottom-right-image {
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
-      width: auto;
-      height: auto;
-      z-index: 1;
-      opacity: 1;
-    }
-
-    .bottom-left-image {
-      position: absolute;
-      bottom: 1rem;
-      left: 1rem;
-      width: auto;
-      height: auto;
-      z-index: 1;
-      opacity: 1;
-    }
-    
-    .top-right-image {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 1082px;
-      height: 381px;
-      z-index: 1;
-      opacity: 1;
-    }
-
-    @media screen and (max-width: 1900px) {
-      .top-right-image {
-        width: 55%;
-        height: auto;
-      }
-
-      .bottom-right-image{
-        width: 60%;
-        height: auto;
-      }
-      
-      .bottom-left-image{
-        width: 15%;
-        height: auto;
-      }
-    }
-
-    .wave-text {
-    display: inline-block;
-    font-size: 1.5rem;
-    white-space: nowrap;
-  }
-
-  .wave-text span {
-    display: inline-block;
-    animation: wave 1.5s infinite;
-    animation-delay: calc(var(--i) * 0.1s);
-  }
-
-  @keyframes wave {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  /* temporaire */
-  .dev-banner {
-      background-color: #ffcc00;
-      color: #000;
-      text-align: center;
-      padding: 5px;
-      font-size: 14px;
-      font-family: Arial, sans-serif;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-    }
-    .dev-banner a {
-      color: #0000ee;
-      text-decoration: underline;
-      margin-left: 5px;
-    }
-
-  </style>
+  <link href="style.css" rel="stylesheet">
 </head>
 <body>
-
-  <div class="dev-banner">
-    Site en développement, ancienne version (complète) :
-    <a href="old/index.html" target="_blank">ICI</a>
-  </div>
-
   <div class="sidebar">
     <ul>
       <li><a href="#about" id="link-about">À propos</a></li>
       <li><a href="#personal-projects" id="link-personal-projects">Projets personnels</a></li>
       <li><a href="#study-projects" id="link-study-projects">Projets académiques</a></li>
-      <li><a href="#contact" id="link-contact">Contact</a></li>
+      <li><a href="#experience" id="link-experience">Expériences professionnelles</a></li>
+      <li><a href="#contact" id="link-contact">Contact et CV</a></li>
     </ul>
+    <p id="date">Portfolio © 2025 - QUESTE Arthur</p>
   </div>
 
   <div class="toggle-button" onclick="toggleSidebar()">
@@ -427,17 +27,17 @@
 
   <main>
     <section id="about" class="content-section">
-      <h1>À propos</h1><br>
-
+      <h1>À propos</h1>
+      <br>
       <p>Je m'appelle Arthur, je suis en première année de Master<br>
         et je donne vie à mon imagination à travers le jeu vidéo.</p>
 
       <p>Tout ce qui touche à cet univers m'inspire : de l'art visuel à l'audio,<br>
          en passant bien sûr par la programmation gameplay, technique et graphique.</p>
 
-      <p>Une sélection de mes projets personnels et académiques vous attend ici.</p><br>
+      <p>Une sélection de mes projets personnels et académiques vous attend ici.</p>
       
-      <p class="wave-text">Bonne visite et bonne découverte !</p>
+      <p class="wave-text">    Bonne découverte</p>
 
       <img src="src/DoorsKeeperBanner2.png" alt="Image décorative" class="bottom-right-image">
       <img src="src/SCROLL.gif" alt="Image indication scroll" class="bottom-left-image">
@@ -451,66 +51,66 @@
 
           <div class="project">
             <div class="project-content">
-              <img src="project3.jpg" alt="Projet Perso 1">
+              <img class="project-visual" src="images/Wispelldom_img.png" alt="Wispelldom made with monogame">
               <div class="project-info">
-                <h2>Project's name</h2>
-                <p>Project's description</p>
-                <div class="tags"><span>C#</span><span>L3</span></div>
+                <h2>Wispelldom</h2>
+                <p>Jeu développé sur le framework <a href="https://monogame.net/" target="_blank" style="color: orangered;">MonoGame</a> en c#. Le projet comporte de nombreux systèmes comme le rendu de <a href="https://fr.wikipedia.org/wiki/Tuile_(jeu_vid%C3%A9o)" target="_blank">tilemap</a>, la lecture d'une carte <a href="https://www.mapeditor.org/" target="_blank">Tiled</a>, l'intégration audio de <a href="https://www.fmod.com/" target="_blank">fmod</a>, la gestion de scène, de la physique et bien plus.<br><br>Le joueur incarne un jeune mage explorant les terres magiques de Wispelldom à la recherche de nouveaux sortilèges.</p>
+                <div class="tags"><span>C#</span><span>MonoGame</span><span>2D</span><span>Pixel Art</span><span>Top Down</span><span>RPG</span></div>
               </div>
             </div>
           </div>
 
           <div class="project">
             <div class="project-content">
-              <img src="project3.jpg" alt="Projet Perso 1">
+              <iframe class="project-visual" src="https://www.youtube.com/embed/jJ9vWSlMHQQ" title ="Doors Keepers (11/2024)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               <div class="project-info">
-                <h2>Project's name</h2>
-                <p>Project's description</p>
-                <div class="tags"><span>C#</span><span>L3</span></div>
+                <h2>Doors Keepers</h2>
+                  <p>Jeu développé sur Unity utilisant <a href="https://mirror-networking.com/" target="_blank">Mirror</a>, une API de réseau pour Unity, et <a href="https://github.com/Chykary/FizzySteamworks" target="_blank">FizzySteam</a>, une solution d'intégration Steam, pour implémenter un système multijoueur.<br><br>Les joueurs incarnent des employés chargés de gérer des portes menant à des donjons générés aléatoirement. À l'intérieur, ils doivent compléter un objectif pour gagner des crédits permettant d'acheter de l'équipement sur un ordinateur.</p>
+                <div class="tags"><span>C#</span><span>Unity</span><span>3D</span><span>Co-op</span><span>Roguelike</span><span>Procédurale</span></div>
               </div>
             </div>
           </div>
 
           <div class="project">
             <div class="project-content">
-              <img src="project3.jpg" alt="Projet Perso 1">
+              <iframe class="project-visual" src="https://www.youtube.com/embed/uStd2zI9QFU" title ="Saviour-99 (Prototype)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               <div class="project-info">
-                <h2>Project's name</h2>
-                <p>Project's description</p>
-                <div class="tags"><span>C#</span><span>L3</span></div>
+                <h2>Saviour-99</h2>
+                <p>Jeu développé sur Unity.<br><br>Le joueur incarne un robot explorant de petites planètes, chacune ayant sa propre gravité. Le robot peut tirer des boules de lumière pour se défendre et résoudre des puzzles, notamment en déplaçant des machines pour diriger un rayon lumineux. L'objectif est d'alimenter un canon permettant d'accéder au niveau suivant.</p>
+                <div class="tags"><span>C#</span><span>Unity</span><span>2D</span><span>Puzzle</span></div>
               </div>
             </div>
           </div>
 
           <div class="project">
             <div class="project-content">
-              <img src="project3.jpg" alt="Projet Perso 1">
+              <iframe class="project-visual" src="https://www.youtube.com/embed/uF0xLYv7hPQ" title ="Elven Heritage (Prototype)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               <div class="project-info">
-                <h2>Project's name</h2>
-                <p>Project's description</p>
-                <div class="tags"><span>C#</span><span>L3</span></div>
+                <h2>Elven Heritage</h2>
+                <p>Jeu développé sur Unity.<br><br>Le joueur incarne un elfe en quête de trésors dans des donjons générés aléatoirement.</p>
+                <div class="tags"><span>C#</span><span>Unity</span><span>2D</span><span>RPG</span><span>Procédurale</span></div>
               </div>
             </div>
           </div>
 
           <div class="project">
             <div class="project-content">
-              <img src="project3.jpg" alt="Projet Perso 1">'
+              <img class="project-visual" src="images/asteroid.gif" alt="Asteroid project in Godot">
               <div class="project-info">
-                <h2>Project's name</h2>
-                <p>Project's description</p>
-                <div class="tags"><span>C#</span><span>L3</span></div>
+                <h2>Asteroids (Clone)</h2>
+                <p>Jeu développé sur Godot en C#.<br><br>C'est un clone du jeu <a href="https://en.wikipedia.org/wiki/Asteroids_(video_game)" target="_blank">Asteroids</a> dans lequel le joueur pilote un vaisseau et essaie de survivre en se défendant des dangereux astéroïdes.<br> Chaque astéroïd détruit rapport un point, une vie en plus est ajoutée tous les 100 points.</p>
+                <div class="tags"><span>C#</span><span>Godot</span><span>Arcade</span><span>Retro</span></div>
               </div>
             </div>
           </div>
 
           <div class="project">
             <div class="project-content">
-              <img src="project3.jpg" alt="Projet Perso 1">
+              <img class="project-visual" src="images/flappybird.gif" alt="flappybird clone made in unity">
               <div class="project-info">
-                <h2>Project's name</h2>
-                <p>Project's description</p>
-                <div class="tags"><span>C#</span><span>L3</span></div>
+                <h2>Flappy Bird (Clone)</h2>
+                <p>Jeu développé sur Unity.<br><br>C'est un clone du jeu <a href="https://en.wikipedia.org/wiki/Flappy_Bird" target="_blank">Flappy Bird</a> dans lequel le joueur contrôle un oiseau en évitant les tuyaux.</p>
+                <div class="tags"><span>C#</span><span>Unity</span><span>Arcade</span><span>Infinite runner</span></div>
               </div>
             </div>
           </div>
@@ -527,44 +127,12 @@
 
           <div class="project">
             <div class="project-content">
-              <img src="C:\Users\i42585\Pictures\logo-enedis-768x164.png" alt="Projet 1">
+              <img class="project-visual" src="images/exclamation.png" alt="Travaux">
               <div class="project-info">
-                <h2>Project's name</h2>
-                <p>Project's description</p>
-                <div class="tags"><span>C</span><span>L1</span></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-content">
-              <img src="project2.jpg" alt="Projet 2">
-              <div class="project-info">
-                <h2>Project's name</h2>
-                <p>Project's description</p>
-                <div class="tags"><span>C#</span><span>L2</span></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-content">
-              <img src="project1.jpg" alt="Projet 1">
-              <div class="project-info">
-                <h2>Project's name</h2>
-                <p>Project's description</p>
-                <div class="tags"><span>C</span><span>L1</span></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project-content">
-              <img src="project2.jpg" alt="Projet 2">
-              <div class="project-info">
-                <h2>Project's name</h2>
-                <p>Project's description</p>
-                <div class="tags"><span>C#</span><span>L2</span></div>
+                <h2>🚧</h2>
+                <p>Cette section est en construction, les projets académiques arrivent...</p>
+                <p>Vous pouvez toujours les consulter sur mon ancien <a href="old/index.html" target="_blank">portfolio</a>.</p>
+                <div class="tags"><span>Bientôt disponible</span></div>
               </div>
             </div>
           </div>
@@ -574,185 +142,52 @@
       </div>
     </section>
 
+    <section id="experience" class="content-section" data-carousel="carousel-experience">
+      <h1>Expériences professionnelles</h1>
+      <div class="project-carousel-wrapper">
+        <div class="project-carousel" id="carousel-experience">
+
+          <div class="project">
+            <div class="project-content">
+              <img class="project-visual" src="images/enedis_logo.png" alt="Enedis logo">
+              <div class="project-info">
+                <h2>Stage Développement Web - Enedis</h2>
+                <p>Stage de 5 mois chez Enedis dans le développement web, axé sur la réalisation de fonctionnalités en PHP orienté objet avec le pattern MVC.<br><br>Les technologies utilisées sont PHP, JavaScript et SQL.<br><br>Ce stage a été réalisé de manière autonome, avec une supervision régulière pour valider les orientations techniques et fonctionnelles.</p>
+                <div class="tags"><span>PHP</span><span>JS</span><span>SQL</span><span>5 mois</span><span>2025</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project-content">
+              <img class="project-visual" src="images/exclamation.png" alt="?">
+              <div class="project-info">
+                <h2>Une nouvelle expérience</h2>
+                <p>Je recherche un stage dans le développement de jeux vidéo pour ma première année de Master.<br><br>Celui-ci débutera le 30 mars 2026 pour une durée minimale de 10 semaines.<br><br>Si mon profil retient votre attention, n'hésitez pas à me contacter.</p>
+                <div class="tags"><span>30 Mars 2026</span><span>+10 semaines</span><span>Développement de jeux vidéo</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="dots" id="dots-experience"></div>
+      </div>
+    </section>
+
     <section id="contact" class="content-section">
-      <h1>Contact</h1>
-      <p>Vous pouvez me contacter à l'adresse email suivante : <a href="mailto:questearthur@gmail.com" style="color:#a7a1ff; text-decoration:underline;">questearthur@gmail.com</a></p>
+      <h1>Contact et CV</h1>
+      <br>
+      <p>Vous pouvez me contacter par mail à l'adresse <a href="mailto:questearthur@gmail.com">questearthur@gmail.com</a> ou par téléphone au <strong>+33 7 80 54 95 58</strong>.</p>
+
+      <p>Vous pouvez également consulter mon <a href="https://linkedin.com/in/arthur-queste-b58a76295/" target="_blank" style="color:rgb(138, 175, 255)">profil LinkedIn</a> ou télécharger mon <a href="images/CV_QUESTE_Arthur.pdf" target="_blank" style="color: rgb(255, 138, 138);">CV en PDF</a>.</p>
+
+      <p class="wave-text">    Merci pour votre visite et à bientôt</p>
     </section>
   </main>
 
   <div class="section-vertical-mask"></div>
 
-  <script>
-    function updateDots(carouselId, dotsId) {
-      const carousel = document.getElementById(carouselId);
-      const dots = document.getElementById(dotsId);
-      const items = carousel.querySelectorAll('.project');
-      dots.innerHTML = '';
+  <script src="script.js"></script>
 
-      items.forEach((_, index) => {
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        if (index === 0) dot.classList.add('active');
-        dots.appendChild(dot);
-      });
-
-      carousel.addEventListener('scroll', () => {
-        const scrollLeft = carousel.scrollLeft;
-        const slideWidth = carousel.offsetWidth;
-        const index = Math.round(scrollLeft / slideWidth);
-        const allDots = dots.querySelectorAll('.dot');
-        allDots.forEach(dot => dot.classList.remove('active'));
-        if (allDots[index]) allDots[index].classList.add('active');
-        currentSlide[carouselId] = index;
-      });
-    }
-
-    const currentSlide = {
-      'carousel-study': 0,
-      'carousel-personal': 0
-    };
-
-    function handleScrollOnProjectSections() {
-      document.querySelectorAll('[data-carousel]').forEach(section => {
-        section.addEventListener('wheel', e => {
-          const carouselId = section.getAttribute('data-carousel');
-          const carousel = document.getElementById(carouselId);
-          const projects = carousel.querySelectorAll('.project');
-          const total = projects.length;
-
-          if (e.deltaY > 0 && currentSlide[carouselId] < total - 1) {
-            currentSlide[carouselId]++;
-            e.preventDefault();
-          } else if (e.deltaY < 0 && currentSlide[carouselId] > 0) {
-            currentSlide[carouselId]--;
-            e.preventDefault();
-          } else if (e.deltaY > 0 && currentSlide[carouselId] === total - 1) {
-            return;
-          } else if (e.deltaY < 0 && currentSlide[carouselId] === 0) {
-            return;
-          } else {
-            e.preventDefault();
-          }
-
-          carousel.scrollTo({
-            left: carousel.offsetWidth * currentSlide[carouselId],
-            behavior: 'smooth'
-          });
-
-          const dots = document.querySelectorAll(`#dots-${carouselId.split('-')[1]} .dot`);
-          dots.forEach(dot => dot.classList.remove('active'));
-          if (dots[currentSlide[carouselId]]) dots[currentSlide[carouselId]].classList.add('active');
-        }, { passive: false });
-      });
-    }
-
-    function observeSections() {
-      const sections = document.querySelectorAll('.content-section');
-      const navLinks = document.querySelectorAll('.sidebar a');
-      const options = { root: null, rootMargin: '0px', threshold: 0.5 };
-
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          const id = entry.target.id;
-          const link = document.getElementById(`link-${id}`);
-
-          if (entry.isIntersecting) {
-            navLinks.forEach(a => a.classList.remove('active'));
-            if (link) link.classList.add('active');
-
-            const index = Array.from(sections).indexOf(entry.target);
-            if (index !== -1) {
-              currentIndex = index;
-            }
-          }
-        });
-      }, options);
-
-      sections.forEach(section => observer.observe(section));
-    }
-
-    updateDots('carousel-study', 'dots-study');
-    updateDots('carousel-personal', 'dots-personal');
-    handleScrollOnProjectSections();
-    observeSections();
-
-    function toggleSidebar() {
-      const sidebar = document.querySelector('.sidebar');
-      const main = document.querySelector('main');
-      const toggle = document.querySelector('.toggle-button');
-      sidebar.classList.toggle('collapsed');
-      main.classList.toggle('collapsed');
-      toggle.classList.toggle('collapsed');
-    }
-    
-    (function smoothSectionScroll() {
-      const sections = Array.from(document.querySelectorAll('.content-section'));
-      const main = document.querySelector('main');
-      window.currentIndex = 0;
-      let isScrolling = false;
-
-      let mouseX = 0;
-      let mouseY = 0;
-
-      document.addEventListener('mousemove', e => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      });
-
-  main.addEventListener('wheel', (e) => {
-    const elementUnderMouse = document.elementFromPoint(mouseX, mouseY);
-    const carousel = elementUnderMouse?.closest('.project-carousel');
-
-    if (carousel) {
-      const scrollLeft = carousel.scrollLeft;
-      const maxScrollLeft = carousel.scrollWidth - carousel.offsetWidth;
-      const goingLeft = e.deltaY < 0;
-      const goingRight = e.deltaY > 0;
-
-      const canScrollLeft = scrollLeft > 0;
-      const canScrollRight = scrollLeft < maxScrollLeft;
-
-      if ((goingLeft && canScrollLeft) || (goingRight && canScrollRight)) {
-        e.preventDefault();
-        return;
-      }
-    }
-
-    if (isScrolling) {
-      e.preventDefault();
-      return;
-    }
-
-    if (e.deltaY > 50 && currentIndex < sections.length - 1) {
-      currentIndex++;
-    } else if (e.deltaY < -50 && currentIndex > 0) {
-      currentIndex--;
-    } else {
-      return;
-    }
-
-    isScrolling = true;
-    e.preventDefault();
-    sections[currentIndex].scrollIntoView({ behavior: 'smooth' });
-
-    setTimeout(() => {
-      isScrolling = false;
-    }, 600);
-  }, { passive: false });
-})();
-
-    const text = document.querySelector(".wave-text");
-    const chars = text.textContent.split("");
-    text.innerHTML = chars
-      .map((char, i) => {
-        if (char === " ") {
-          return `<span style="--i:${i}; display:inline-block; width:0.5em;">&nbsp;</span>`;
-        } else {
-          return `<span style="--i:${i}">${char}</span>`;
-        }
-      })
-      .join("");
-
-  </script>
 </body>
 </html>

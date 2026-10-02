@@ -27,6 +27,7 @@ function updateDots(carouselId, dotsId) {
 const currentSlide = {
     'carousel-study': 0,
     'carousel-personal': 0,
+    'carousel-gamejam': 0,
     'carousel-experience': 0
 };
 
@@ -91,6 +92,7 @@ function observeSections() {
 
 updateDots('carousel-study', 'dots-study');
 updateDots('carousel-personal', 'dots-personal');
+updateDots('carousel-gamejam', 'dots-gamejam');
 updateDots('carousel-experience', 'dots-experience');
 handleScrollOnProjectSections();
 observeSections();
